@@ -13,9 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // -------------------------------
-        // Part 1 — Abstract Factory
-        // -------------------------------
         EnemyComponentFactory fireFactory = new FireComponentFactory();
         EnemyComponentFactory iceFactory = new IceComponentFactory();
         EnemyComponentFactory shadowFactory = new ShadowComponentFactory();
@@ -25,12 +22,10 @@ public class Main {
         displayFactoryOutput("ICE", iceFactory);
         displayFactoryOutput("SHADOW", shadowFactory);
 
-        // -------------------------------
-        // Part 2 — Builder (+ Factory Method inside build())
-        // -------------------------------
+
         System.out.println("\n=== Part 2: Builder (+ Factory Method) ===");
 
-        // FACTORY METHOD: build() produces Enemy; concrete builder chooses concrete product.
+
         Enemy dragon = new BossEnemyBuilder()
                 .setName("Ancient Fire Dragon")
                 .setHealth(50_000)
@@ -55,9 +50,7 @@ public class Main {
         Enemy minion = basicDirector.createMinion(iceFactory);
         minion.displayInfo();
 
-        // -------------------------------
-        // Part 3 — Prototype (Registry + deep copy)
-        // -------------------------------
+
         System.out.println("\n=== Part 3: Prototype (Deep Copy) ===");
         EnemyRegistry registry = new EnemyRegistry();
 
@@ -81,9 +74,8 @@ public class Main {
         System.out.println("\n--- CLONE (modified) ---");
         elite.displayInfo();
 
-        // -------------------------------
         // Part 4 — Together (full pipeline)
-        // -------------------------------
+
         System.out.println("\n=== Part 4: Full pipeline ===");
 
         Enemy demonLord = new BossEnemyBuilder()

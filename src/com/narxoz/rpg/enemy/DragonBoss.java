@@ -24,7 +24,7 @@ public class DragonBoss implements Enemy {
     private final int wingspan;
 
     /** Конструктор НЕ public: создаётся только Builder'ом. */
-    DragonBoss(String name, int health, int damage, int defense, int speed,
+    public DragonBoss(String name, int health, int damage, int defense, int speed,
                String element, List<Ability> abilities, Map<Integer, Integer> phases,
                LootTable lootTable, String aiBehavior,
                boolean canFly, boolean hasBreathAttack, int wingspan) {

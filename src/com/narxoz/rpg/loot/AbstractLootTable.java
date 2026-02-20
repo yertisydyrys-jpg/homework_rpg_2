@@ -24,7 +24,6 @@ public abstract class AbstractLootTable implements LootTable {
     @Override public int getGoldDrop() { return goldDrop; }
     @Override public int getExperienceDrop() { return experienceDrop; }
 
-    /** Удобно для наследников, когда делаем clone() */
     protected List<String> copyItems() {
         return new ArrayList<>(items);
     }
@@ -33,4 +32,6 @@ public abstract class AbstractLootTable implements LootTable {
     public String toString() {
         return getLootInfo();
     }
+    @Override
+    public abstract LootTable clone();
 }

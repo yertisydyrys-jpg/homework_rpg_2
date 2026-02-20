@@ -24,7 +24,7 @@ public class Goblin implements Enemy {
     }
 
     /** Полный конструктор (package-private) — удобно для Builder/clone. */
-    Goblin(String name, int health, int damage, int defense, int speed,
+    public Goblin(String name, int health, int damage, int defense, int speed,
            List<Ability> abilities, LootTable lootTable) {
         this.name = name;
         this.health = health;

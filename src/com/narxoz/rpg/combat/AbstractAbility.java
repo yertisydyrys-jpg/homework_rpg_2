@@ -23,4 +23,6 @@ public abstract class AbstractAbility implements Ability {
     public String toString() {
         return name + " [" + type + ", power=" + power + "]";
     }
+    @Override
+    public abstract Ability clone();
 }
